@@ -9,4 +9,14 @@
     <string name="click_to_login">Already have an account? Click to login</string>
     <string name="click_to_signup">Don\'t have an account? Click to sign up</string>
     <string name="logout">Logout</string>
+    <string name="what_type_of">what type of</string>
+    <string name="begin_quiz">Begin Quiz</string>
+    <string name="learner_are_you">learner are you?</string>
+    <string name="progress">Progress</string>
+    <string name="ans_a">Ans A</string>
+    <string name="ans_b">Ans B</string>
+    <string name="this_is_the_question">This is the question</string>
+    <string name="welcome_back">welcome back, </string>
+    <string name="backward"><![CDATA[<-]]></string>
+    <string name="forward"><![CDATA[->]]></string>
 </resources>
