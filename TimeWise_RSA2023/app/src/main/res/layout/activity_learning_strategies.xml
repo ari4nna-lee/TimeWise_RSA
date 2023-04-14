@@ -131,10 +131,10 @@
                         android:layout_marginBottom="16dp"
                         android:fontFamily="@font/persansb"
                         android:text="Examples: \n\n i. Sing the information to a catchy tune
- \n\n Think of a mnemonic phrase in which the words start with the same letters as the words that you need to remember
-\n\n Draw a picture that helps you make a humorous connection between the new information and the things that you already know \n\n
-Envision what it would be like to experience your topic in person. Imagine the sights, sounds, smells and more \n\n
-Think up rhymes or tongue twisters that can help the information stick in your brain \n\n Visualize the details with a web-style mind map that illustrates the relationships between concepts"
+ \n\n ii. Think of a mnemonic phrase in which the words start with the same letters as the words that you need to remember
+\n\n iii. Draw a picture that helps you make a humorous connection between the new information and the things that you already know \n\n
+Envision what it would be like to experience your topic in person. Imagine the sights, sounds, smells and more \n\n iv.
+Think up rhymes or tongue twisters that can help the information stick in your brain \n\n v. Visualize the details with a web-style mind map that illustrates the relationships between concepts"
                         android:textColor="@color/main"
                         android:textSize="16dp"
                         android:visibility="gone" />
