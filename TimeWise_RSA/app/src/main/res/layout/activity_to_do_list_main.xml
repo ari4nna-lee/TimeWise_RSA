@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".ToDoListMain">
+
+    <TextView
+        android:id="@+id/button_back_todo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="back"
+        android:textStyle="bold"
+        android:fontFamily="@font/persansb"
+        android:textColor="@color/main"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:layout_marginHorizontal="16dp"/>
+
+    <TextView
+        android:id="@+id/tasks_tv"
+        android:layout_below="@id/button_back_todo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="tasks"
+        android:fontFamily="@font/brandish"
+        android:textColor="@color/main"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"
+        android:textSize="25sp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tasks_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/main"
+        android:fontFamily="@font/persansb"
+        android:layout_below="@id/tasks_tv"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:nestedScrollingEnabled="true"/>
+
+    <LinearLayout
+        android:layout_below="@id/tasks_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tint="@color/main"
+            android:layout_marginHorizontal="8dp"
+            android:src="@drawable/baseline_arrow_back_24"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/main"
+            android:textStyle="bold"
+            android:fontFamily="@font/persansb"
+            android:text="Swipe Left to Delete\nSwipe Right To Edit Task"
+            android:layout_below="@id/tasks_recyclerview"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tint="@color/main"
+            android:layout_marginHorizontal="8dp"
+            android:src="@drawable/baseline_arrow_forward_24"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/action_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="32dp"
+        android:backgroundTint="@color/main"
+        android:src="@drawable/baseline_add_24"/>
+
+</RelativeLayout>

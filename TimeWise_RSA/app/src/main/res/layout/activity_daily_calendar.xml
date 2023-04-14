@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".DailyCalendarActivity">
+    <TextView
+        android:id="@+id/back_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="back"
+        android:fontFamily="@font/persansb"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="20dp">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/backward"
+            android:fontFamily="@font/persansb"
+            android:textColor="@color/main"
+            android:backgroundTint="@color/peach"
+            android:textStyle="bold"
+            android:onClick="previousDayAction"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/month_day_textview"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:fontFamily="@font/persansb"
+            android:layout_height="wrap_content"
+            android:text="Mar 2023"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="@color/main"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/forward"
+            android:fontFamily="@font/persansb"
+            android:textColor="@color/main"
+            android:backgroundTint="@color/sorbet"
+            android:textStyle="bold"
+            android:onClick="nextDayAction"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/day_of_week_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/persansb"
+        android:text="monday"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add event"
+        android:textAllCaps="false"
+        android:textColor="@color/main"
+        android:fontFamily="@font/persansb"
+        android:backgroundTint="@color/white"
+        android:textStyle="bold"
+        android:onClick="newEventAction"
+        android:layout_gravity="center"
+        android:textSize="20sp" />
+
+    <ListView
+        android:id="@+id/hour_list_view"
+        android:layout_width="match_parent"
+        android:fontFamily="@font/persansb"
+        android:layout_height="0dp"
+        android:layout_weight="5" />
+
+</LinearLayout>
