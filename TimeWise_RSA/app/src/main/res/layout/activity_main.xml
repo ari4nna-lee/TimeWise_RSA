@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/scrollable_panels"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:animateLayoutChanges="true"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/welcome_back"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="15dp"
+
+            android:gravity="start"
+            android:src="@drawable/welcome_back"
+            android:text="@string/welcome_back" />
+
+        <TextView
+            android:id="@+id/welcome_back_text"
+            android:fontFamily="@font/persansb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginHorizontal="40dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="welcome back, "/>
+
+            <ImageView
+                android:id="@+id/home_todo"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/welcome_back"
+
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/todo"
+                android:gravity="start"
+                android:text="here is your to-do list for today:" />
+
+            <ImageView
+                android:id="@+id/home_pomodoro"
+                android:layout_below="@id/home_todo"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="7.5dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="start"
+                android:background="@drawable/pomodoro"
+                android:text="start a pomodoro timer" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/bottom_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/home_panel_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:layout_marginRight="15dp"
+            android:fontFamily="@font/persansb"
+            android:textColor="@color/main"
+            android:textStyle="bold"
+            android:text="home" />
+
+        <TextView
+            android:id="@+id/calendar_panel_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_toRightOf="@id/home_panel_text"
+            android:fontFamily="@font/persansb"
+            android:textColor="@color/main"
+            android:textStyle="bold"
+            android:text="calendar" />
+
+        <TextView
+            android:id="@+id/unwind_panel_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_toRightOf="@id/calendar_panel_text"
+            android:fontFamily="@font/persansb"
+            android:textColor="@color/main"
+            android:textStyle="bold"
+            android:text="unwind" />
+
+        <TextView
+            android:id="@+id/resources_panel_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_toRightOf="@id/unwind_panel_text"
+            android:fontFamily="@font/persansb"
+            android:textColor="@color/main"
+            android:textStyle="bold"
+            android:text="resources" />
+
+        <TextView
+            android:id="@+id/sign_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/resources_panel_text"
+            android:fontFamily="@font/persansb"
+            android:textColor="@color/main"
+            android:textStyle="bold"
+            android:text="sign out" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

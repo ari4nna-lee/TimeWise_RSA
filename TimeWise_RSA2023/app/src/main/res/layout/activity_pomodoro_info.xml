@@ -48,7 +48,7 @@
             android:padding="16dp"
             android:fontFamily="@font/persansb"
             android:textSize="20sp"
-            android:text="The Pomodoro Method is a time-mamangement technique that uses a timer to break down your studying into 25-minute increments. After each session, you take a 5-minute break, during which you entirely distance yourself from the study topic. \n\nAfter completing four sessions, it is recommended that you take a more extended 15-to-30 minute break. \n\n In Timewise, you can adjust the amount of time you want to study and break for! Another common time division is 45 minutes of work, 15 minutes of break."
+            android:text="The Pomodoro Method is a time-management technique that uses a timer to break down your studying into 25-minute increments. After each session, you take a 5-minute break, during which you entirely distance yourself from the study topic. \n\nAfter completing four sessions, it is recommended that you take a more extended 15-to-30 minute break. \n\n In Timewise, you can adjust the amount of time you want to study and break for! Another common time division is 45 minutes of work, 15 minutes of break."
             android:textColor="@color/main" />
 
     </androidx.cardview.widget.CardView>
