@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,7 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginActivity extends AppCompatActivity {
 
     TextInputEditText editTextName, editTextEmail, editTextPassword, editTextConfirmPswd;
-    Button buttonLogin;
+    ImageView buttonLogin;
     FirebaseAuth mAuth;
     ProgressBar progressBar;
     TextView signUpNow;

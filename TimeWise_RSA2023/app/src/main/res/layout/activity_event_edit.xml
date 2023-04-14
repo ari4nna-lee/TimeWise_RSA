@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/background"
     tools:context=".EventEditActivity">
     
     <TextView
@@ -12,16 +13,18 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Name:"
+        android:fontFamily="@font/persansb"
+        android:text="event name:"
         android:textSize="20sp"
         android:textAlignment="center"
-        android:textColor="@color/black"/>
+        android:textColor="@color/main"/>
     
     <EditText
         android:id="@+id/event_name_et"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:fontFamily="@font/persansb"
         android:textSize="20sp"
         android:ems="10"
         android:inputType="text"/>
@@ -32,10 +35,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Date:"
+        android:fontFamily="@font/persansb"
+        android:text="date:"
         android:textSize="20sp"
         android:textAlignment="center"
-        android:textColor="@color/black"/>
+        android:textColor="@color/main"/>
 
     <TextView
         android:id="@+id/event_time_et"
@@ -43,19 +47,22 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Time:"
+        android:fontFamily="@font/persansb"
+        android:text="time:"
         android:textSize="20sp"
         android:textAlignment="center"
-        android:textColor="@color/black"/>
+        android:textColor="@color/main"/>
 
     <Button
         android:layout_margin="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="save"
-        android:textColor="@color/teal_200"
+        android:textColor="@color/main"
+        android:textAllCaps="false"
         android:backgroundTint="@color/white"
         android:textStyle="bold"
+        android:fontFamily="@font/persansb"
         android:onClick="saveEventAction"
         android:layout_gravity="center"
         android:textSize="20sp" />

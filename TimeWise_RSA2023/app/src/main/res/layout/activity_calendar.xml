@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/background"
     tools:context=".Calendar">
 
     <TextView
@@ -12,6 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="back"
+        android:fontFamily="@font/persansb"
+        android:textColor="@color/main"
         android:layout_marginTop="10dp"
         android:textSize="15sp"
         android:layout_marginHorizontal="20dp"/>
@@ -20,8 +23,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Weekly"
-        android:textColor="@color/teal_200"
+        android:text="weekly"
+        android:fontFamily="@font/persansb"
+        android:textAllCaps="false"
+        android:textColor="@color/main"
         android:backgroundTint="@color/white"
         android:textStyle="bold"
         android:onClick="weeklyAction"
@@ -38,8 +43,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/backward"
-            android:textColor="@color/teal_200"
-            android:backgroundTint="@color/white"
+            android:textColor="@color/main"
+            android:fontFamily="@font/persansb"
+            android:backgroundTint="@color/peach"
             android:textStyle="bold"
             android:onClick="previousMonthAction"
             android:textSize="20sp" />
@@ -50,17 +56,20 @@
             android:layout_weight="2"
             android:layout_height="wrap_content"
             android:text="Mar 2023"
+            android:fontFamily="@font/persansb"
+            android:textAllCaps="false"
             android:textSize="20sp"
             android:textAlignment="center"
-            android:textColor="@color/black"/>
+            android:textColor="@color/main"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/forward"
-            android:textColor="@color/teal_200"
-            android:backgroundTint="@color/white"
+            android:textColor="@color/main"
+            android:fontFamily="@font/persansb"
+            android:backgroundTint="@color/sorbet"
             android:textStyle="bold"
             android:onClick="nextMonthAction"
             android:textSize="20sp" />
@@ -76,6 +85,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/persansb"
+            android:textColor="@color/main"
             android:text="sun"
             android:textAlignment="center"
             android:textSize="16sp" />
@@ -84,6 +95,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/persansb"
+            android:textColor="@color/main"
             android:text="mon"
             android:textAlignment="center"
             android:textSize="16sp" />
@@ -92,6 +105,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/persansb"
+            android:textColor="@color/main"
             android:text="tue"
             android:textAlignment="center"
             android:textSize="16sp" />
@@ -100,6 +115,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/persansb"
+            android:textColor="@color/main"
             android:text="wed"
             android:textAlignment="center"
             android:textSize="16sp" />
@@ -108,6 +125,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/persansb"
+            android:textColor="@color/main"
             android:text="thur"
             android:textAlignment="center"
             android:textSize="16sp" />
@@ -116,6 +135,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/persansb"
+            android:textColor="@color/main"
             android:text="fri"
             android:textAlignment="center"
             android:textSize="16sp" />
@@ -124,6 +145,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/persansb"
+            android:textColor="@color/main"
             android:text="sat"
             android:textAlignment="center"
             android:textSize="16sp" />
@@ -133,6 +156,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/calendar_recyclerview"
         android:layout_width="match_parent"
+        android:fontFamily="@font/persansb"
         android:layout_height="match_parent"/>
 
 </LinearLayout>

@@ -37,14 +37,14 @@ public class LearningStyleQuiz extends AppCompatActivity implements View.OnClick
         ansB = findViewById(R.id.ans_b);
         nextButton = findViewById(R.id.next);
 
-        ansA.setBackgroundColor(Color.BLUE);
-        ansB.setBackgroundColor(Color.BLUE);
+        ansA.setBackgroundColor(Color.parseColor("#75c2d1"));
+        ansB.setBackgroundColor(Color.parseColor("#75c2d1"));
 
         ansA.setOnClickListener(this);
         ansB.setOnClickListener(this);
         nextButton.setOnClickListener(this);
 
-        totalQuestionTextView.setText("Total questions: " + totalQuestion);
+        totalQuestionTextView.setText("Progress: " + (currentQuestionIndex + 1) + "/" + totalQuestion);
 
         loadNewQuestion();
 
@@ -53,12 +53,13 @@ public class LearningStyleQuiz extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View view) {
 
-        ansA.setBackgroundColor(Color.BLUE);
-        ansB.setBackgroundColor(Color.BLUE);
+        ansA.setBackgroundColor(Color.parseColor("#75c2d1"));
+        ansB.setBackgroundColor(Color.parseColor("#75c2d1"));
 
         Button clickedButton = (Button) view;
         if (clickedButton.getId() == R.id.next) {
             currentQuestionIndex ++;
+            totalQuestionTextView.setText("Progress: " + (currentQuestionIndex + 1) + "/" + totalQuestion);
             loadNewQuestion();
             if (selectedAnswer.equals(QuestionAnswer.yesAnswer)) {
                 if (currentQuestionIndex <= 2) {
@@ -71,16 +72,13 @@ public class LearningStyleQuiz extends AppCompatActivity implements View.OnClick
             }
         } else {
             selectedAnswer = clickedButton.getText().toString();
-            clickedButton.setBackgroundColor(Color.MAGENTA);
+            clickedButton.setBackgroundColor(Color.parseColor("#3D9161"));
         }
     }
     void loadNewQuestion() {
 
         if (currentQuestionIndex == totalQuestion) {
             finishQuiz();
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(intent);
-            finish();
             return;
         }
 
@@ -97,14 +95,27 @@ public class LearningStyleQuiz extends AppCompatActivity implements View.OnClick
         } else if (kinestheticScore > visualScore && kinestheticScore > auditoryScore) {
             learning_type = "Kinesthetic";
         } else {
-            learning_type = "Combination Learner";
+            learning_type = "Visual";
         }
 
-        new AlertDialog.Builder(this)
-                .setMessage("Your learning style is: " + learning_type)
-                .setCancelable(true)
-                .show();
+        if (learning_type == "Visual") {
+            Intent intent = new Intent(getApplicationContext(), VisualLearnerInfo.class);
+            intent.putExtra("learningStyle", learning_type);
+            startActivity(intent);
+            finish();
+        } else if (learning_type == "Auditory") {
+            Intent intent = new Intent(getApplicationContext(), AuditoryLearnerInfo.class);
+            intent.putExtra("learningStyle", learning_type);
+            startActivity(intent);
+            finish();
+        } else if (learning_type == "Kinesthetic") {
+            Intent intent = new Intent(getApplicationContext(), KinestheticLearnerInfo.class);
+            intent.putExtra("learningStyle", learning_type);
+            startActivity(intent);
+            finish();
+        }
 
     }
+
 
 }

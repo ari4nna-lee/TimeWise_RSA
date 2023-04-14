@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="@drawable/background"
     tools:context=".BeginQuiz">
 
     <TextView
@@ -14,6 +15,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/what_type_of"
+        android:fontFamily="@font/brandishregular"
+        android:textColor="@color/main"
         android:textSize="30sp" />
 
     <TextView
@@ -22,6 +25,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/learner_are_you"
+        android:fontFamily="@font/brandishregular"
+        android:textColor="@color/main"
         android:paddingBottom="15dp"
         android:textSize="30sp" />
 
@@ -31,7 +36,10 @@
         android:paddingVertical="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/persansb"
         android:gravity="center"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/main"
         android:text="@string/begin_quiz" />
 
 </LinearLayout>

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -16,6 +17,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.ListenerRegistration;
 
 import org.w3c.dom.Text;
 
@@ -26,11 +28,13 @@ public class MainActivity extends AppCompatActivity {
     FirebaseFirestore fStore;
     String userID;
 
-    Button welcomeButton;
-    TextView toDoButton;
-    TextView pomodoroButton;
+    TextView welcomeButtonText;
+    ImageView welcomeBack;
+    ImageView toDoButton;
+    ImageView pomodoroButton;
+    TextView signOutText;
     TextView homeText;
-    TextView toDoTextView;
+    TextView calendarText;
     TextView unwindText;
     TextView resourcesText;
 
@@ -41,9 +45,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //button = findViewById(R.id.logout_button);
-        welcomeButton = findViewById(R.id.welcome_back);
+        welcomeBack = findViewById(R.id.welcome_back);
+        welcomeButtonText = findViewById(R.id.welcome_back_text);
         toDoButton = findViewById(R.id.home_todo);
         pomodoroButton = findViewById(R.id.home_pomodoro);
+        signOutText = findViewById(R.id.sign_out);
+        calendarText = findViewById(R.id.calendar_panel_text);
+        unwindText = findViewById(R.id.unwind_panel_text);
+        resourcesText = findViewById(R.id.resources_panel_text);
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
@@ -52,25 +61,61 @@ public class MainActivity extends AppCompatActivity {
         userID = auth.getCurrentUser().getUid();
 
         DocumentReference documentReference = fStore.collection("users").document(userID);
-        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+        ListenerRegistration registration = documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
-                welcomeButton.setText("welcome back, " + documentSnapshot.getString("fName"));
+                welcomeButtonText.setText("welcome back, " + documentSnapshot.getString("fName") + "!");
             }
         });
 
         if (user == null) {
-            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+            Intent intent = new Intent(getApplicationContext(), IntroScreen.class);
             startActivity(intent);
             finish();
         }
 
-
-        welcomeButton.setOnClickListener(new View.OnClickListener() {
+        unwindText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                Intent intent = new Intent(getApplicationContext(), BreathingExercisesActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        signOutText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                registration.remove();
+                auth.signOut();
+                Intent intent = new Intent(getApplicationContext(), IntroScreen.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        calendarText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Calendar.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        resourcesText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), StudyResourcesActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        pomodoroButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SelectPomodoroTimer.class);
                 startActivity(intent);
                 finish();
             }
@@ -79,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
         toDoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Calendar.class);
+                Intent intent = new Intent(getApplicationContext(), ToDoListMain.class);
                 startActivity(intent);
                 finish();
             }

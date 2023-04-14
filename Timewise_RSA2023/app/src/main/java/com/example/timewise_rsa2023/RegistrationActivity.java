@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,7 +30,7 @@ import java.util.Map;
 public class RegistrationActivity extends AppCompatActivity {
 
     TextInputEditText editTextName, editTextEmail, editTextPassword;
-    Button buttonReg;
+    ImageView buttonReg;
     FirebaseAuth mAuth;
     ProgressBar progressBar;
     TextView loginNow;

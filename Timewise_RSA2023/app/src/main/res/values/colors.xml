@@ -9,4 +9,18 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#808080</color>
     <color name="light_gray">#EEE</color>
+    <color name="main">#3d4f6c</color>
+    <color name="light_blue">#a3e0e9</color>
+    <color name="peach">#fad1ce</color>
+    <color name="sorbet">#ffd9be</color>
+    <color name="bright_green">#9ae7bb</color>
+    <color name="dark_blue">#75c2d1</color>
+    <color name="dark_green">#3D9161</color>
+    <color name="main_purple">#B1AFE3</color>
+    <color name="dusky">#ad929f</color>
+    <color name="secondary">#ecbcbc</color>
+    <color name="yellow">#ffdeb6</color>
+    <color name="dark_peach">#F3AFA6</color>
+    <color name="dark_pink">#EABFC6</color>
+    <color name="light_green">#C8F4DB</color>
 </resources>
